@@ -29,15 +29,15 @@ def load_env(env_loc):
 
     # Set path for unity environment based on operating system.
     if sys.platform == 'linux':
-        p = os.path.join(env_loc, r'Tennis_Linux/Tennis.x86_64')
+        f = os.path.join(env_loc, r'Tennis_Linux/Tennis.x86_64')
     elif sys.platform == 'darwin':
-        p = os.path.join(env_loc, r'Tennis.app')
+        f = os.path.join(env_loc, r'Tennis.app')
     else:
-        p = os.path.join(env_loc, r'Tennis_Windows_x86_64/Tennis.exe')
+        f = os.path.join(env_loc, r'Tennis_Windows_x86_64/Tennis.exe')
 
     # Initialize unity environment, return message if error thrown.
     try:
-        env = UnityEnvironment(file_name=p)
+        env = UnityEnvironment(file_name=f)
 
     except UnityEnvironmentException:
         print('\nEnvironment not found or Operating System not supported.\n')
@@ -54,7 +54,7 @@ def load_env(env_loc):
     num_agents = len(env_info.agents)
 
     # Display relevant environment information.
-    print('Number of Agents: {}, State Size: {}, Action Size: {}'.format(
+    print('\nNumber of Agents: {}, State Size: {}, Action Size: {}\n'.format(
         num_agents, state_size, action_size))
 
     return env, num_agents, state_size, action_size
@@ -96,24 +96,26 @@ def create_agent(state_size, action_size, actor_fc1_units=512,
     Returns:
         agent: An Agent object used for training.
     """
-    # create combined actor critic
+
+    # Create Actor/Critic networks based on designated parameters.
     actor_net = ActorNet(state_size, action_size, actor_fc1_units,
                          actor_fc2_units).to(device)
     critic_net = CriticNet(state_size, critic_fc1_units, critic_fc2_units)\
         .to(device)
 
-    # copy actor/critic to use it as the acting network
+    # Create copy of Actor/Critic networks for action prediction.
     actor_net_old = ActorNet(state_size, action_size, actor_fc1_units,
                              actor_fc2_units).to(device)
     critic_net_old = CriticNet(state_size, critic_fc1_units, critic_fc2_units)\
         .to(device)
-
     actor_net_old.load_state_dict(actor_net.state_dict())
     critic_net_old.load_state_dict(critic_net.state_dict())
 
+    # Create PolicyNormal objects containing both sets of Actor/Critic nets.
     actor_critic = PolicyNormal(actor_net, critic_net)
     actor_critic_old = PolicyNormal(actor_net_old, critic_net_old)
 
+    # Initialize optimizers for Actor and Critic networks.
     actor_optimizer = torch.optim.Adam(
         actor_net.parameters(),
         lr=actor_lr
@@ -123,6 +125,7 @@ def create_agent(state_size, action_size, actor_fc1_units=512,
         lr=critic_lr
     )
 
+    # Create and return PPOAgent with relevant parameters.
     agent = PPOAgent(
         device=device,
         actor_critic=actor_critic,
@@ -173,7 +176,7 @@ def create_trainer(env, agents, save_dir, update_frequency=5000,
     return trainer
 
 
-def train_agents(env, trainer, n_episodes=20000, target_score=0.5,
+def train_agents(env, trainer, n_episodes=8000, target_score=0.5,
                  score_window_size=100):
     """
     This function carries out the training process with specified trainer.

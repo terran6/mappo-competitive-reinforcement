@@ -65,9 +65,6 @@ class MAPPOTrainer:
         # Evaluate if episode has finished.
         dones = env_info.local_done
 
-        # if self.i_episode > 7000:
-        #     time.sleep(0.005)
-
         return states, rewards, dones, env_info
 
     def run_episode(self):
@@ -175,9 +172,10 @@ class MAPPOTrainer:
 
         # Print current status to terminal.
         print(
-            f'Episode {self.i_episode}: \n\t{agent_info}\n' +
-            f'\tMean Reward Max: {max_mean:.2f}, ' +
-            f'Mean Reward Total: {mean_reward.sum():.2f}, ' +
+            f'\033[1mEpisode {self.i_episode} - ' +
+            f'Mean Max Reward: {max_mean:.2f}\033[0m' +
+            f'\n\t{agent_info}\n\t' +
+            f'Mean Total Reward: {mean_reward.sum():.2f}, '
             f'Mean Episode Length {mean_eps_len:.1f}'
         )
 
@@ -189,7 +187,7 @@ class MAPPOTrainer:
         # Initialize DataFrame to be used for plot.
         columns = [f"Agent {i}" for i in range(len(self.agents))]
         df = pd.DataFrame(self.score_history, columns=columns)
-        df['Mean'] = df.max(axis=1)
+        df['Max'] = df.max(axis=1)
 
         # Plot rewards per agent and cumulative moving averages.
         fig, ax = plt.subplots(figsize=(12, 9))
@@ -199,8 +197,9 @@ class MAPPOTrainer:
         )
         ax.set_xlabel('Episode', fontsize=21)
         ax.set_ylabel('Score', fontsize=21)
-        df.rolling(self.score_window_size).mean().plot(ax=ax,
-                                                       colormap='terrain')
+        df.rolling(self.score_window_size).mean()\
+            .plot(ax=ax, colormap='terrain')
+        ax.grid(color='w', linewidth=0.2)
         ax.legend(fontsize=13)
         plt.tight_layout()
 
