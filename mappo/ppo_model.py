@@ -103,7 +103,7 @@ class CriticNet(nn.Module):
 
     def forward(self, state):
         """
-        Builds a critic (value) network evaluates the given state value.
+        Builds a critic (value) network evaluates the given state.
 
         Parameters:
             state: An instance of state gathered for the environent.
@@ -116,7 +116,7 @@ class CriticNet(nn.Module):
         x = torch.relu(self.fc1(state))
         x = torch.relu(self.fc2(x))
 
-        # Output critique of state value for Actor training.
+        # Output critique of state for Actor training.
         out = self.fc3(x)
 
         return out
