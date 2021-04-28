@@ -1,1 +1,1 @@
-# A Multi-Agent Proximal Policy Optimization Approach for a Competitive Reinforcement Problem
+# Multi-Agent Proximal Policy Optimization Method for Competitive Reinforcement
