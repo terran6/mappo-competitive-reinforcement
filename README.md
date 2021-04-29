@@ -6,7 +6,7 @@ Well, what if this could be implemented through Artificial Intelligence?  Could 
 
 ## Details
 
-The above implementation utilizes a Multi-Agent Proximal Policy Optimization algorithm in order to develop the expertise of agents in playing tennis!  This algorithm may be used in a variety of domains and is effective in its ability to generate an optimal methodology for realizing maximum reward.
+The above implementation utilizes a Multi-Agent Proximal Policy Optimization (MAPPO) algorithm in order to develop the expertise of agents in playing tennis!  This algorithm may be used in a variety of domains and is effective in its ability to generate an optimal methodology for realizing maximum reward.
 
 The approach utilizes the power of Actor-Critic networks in order to optimize a policy and achieve expertise in a predefined domain.  Starting the process knowing nothing about what actions would lead to a positive or negative result, the algorithm initially samples and evaluates actions selected from an unoptimized Normal distribution.  After many iterations, the Critic network learns to effectively evaluate each action result and provide meaningful information to the Actor so that it may optimize its action sampling distribution leading to better gameplay!
 
