@@ -9,7 +9,7 @@ import torch
 import sys
 import os
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 
 def load_env(env_loc):
@@ -207,7 +207,7 @@ def train_agents(env, trainer, n_episodes=8000, target_score=0.5,
             trainer.score_history[-score_window_size:], axis=1
         ).mean()
         if mean_reward >= target_score:
-            print("Environment is solved.")
+            print('Environment is solved.')
             env.close()
             trainer.print_status()
             trainer.plot()

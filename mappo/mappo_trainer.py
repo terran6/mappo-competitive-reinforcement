@@ -185,7 +185,7 @@ class MAPPOTrainer:
         """
 
         # Initialize DataFrame to be used for plot.
-        columns = [f"Agent {i}" for i in range(len(self.agents))]
+        columns = [f'Agent {i}' for i in range(len(self.agents))]
         df = pd.DataFrame(self.score_history, columns=columns)
         df['Max'] = df.max(axis=1)
 
