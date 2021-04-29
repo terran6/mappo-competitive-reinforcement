@@ -1,5 +1,13 @@
 # Competitive Reinforcement Learning through Multi-Agent Proximal Policy Optimization
 
+<br />
+
+<div align="center">
+  <img width="400" height="200" src="saved_files/play_tennis.png">
+</div>
+
+<br />
+
 ## Results
 In the `saved_files` directory, you may find the saved model weights and learning curve plots for the successful Actor-Critic networks.  The trained agents were able to solve the environment in 5,627 episodes utilizing the MAPPO training algorithm.  The graph below depicts the agents' performance over time in terms of relative score averaged over the past 100 episodes.
 
