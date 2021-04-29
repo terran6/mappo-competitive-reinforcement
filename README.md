@@ -1,5 +1,7 @@
 # Competitive Reinforcement Learning through Multi-Agent Proximal Policy Optimization
 
+Competition is a beautiful thing.  The chance to evaluate ones capabilities in the pursuit of achievement is an invaluable experience!  Who doesn't relish the possibility of taking on a few friends in a fair game from time to time?  I myself particularly enjoy the challenge of a 1 on 1 basketball game, taking a stroll down memory lane by attempting to beat an old Nintendo 64 game or even having a board game night with good company.  The stimulation for me mainly comes from the process of continually improving my performance.  This normally comes via the process of repitition, evaluation, and implementing subsequent changes.
+
 <br />
 
 <div align="center">
