@@ -13,7 +13,7 @@ In the environment, the state space consists of `8` variables that correspond to
 <br />
 
 <div align="center">
-  <img width="700" height="373" src="saved_files/play_tennis.png">
+  <img width="750" height="400" src="saved_files/play_tennis.png">
 </div>
 
 <br />
