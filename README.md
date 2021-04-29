@@ -3,7 +3,7 @@
 <br />
 
 <div align="center">
-  <img width="800" height="400" src="saved_files/play_tennis.png">
+  <img width="750" height="400" src="saved_files/play_tennis.png">
 </div>
 
 <br />
