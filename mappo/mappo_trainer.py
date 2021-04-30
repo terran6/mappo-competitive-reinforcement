@@ -29,7 +29,7 @@ class MAPPOTrainer:
                  update_frequency, save_dir):
         """Initializes MAPPOTrainer attributes."""
 
-        # Initialize relevant variables for training
+        # Initialize relevant variables for training.
         self.env = env
         self.brain_name = env.brain_names[0]
         self.agents = agents
@@ -88,7 +88,7 @@ class MAPPOTrainer:
             self.timestep += 1
 
             # Sample actions for each agent while keeping track of states,
-            # actions and log probs
+            # actions and log probabilities.
             processed_states, actions, log_probs = [], [], []
             for agent, state in zip(self.agents, states):
                 processed_state = torch.from_numpy(state).float()
@@ -203,7 +203,7 @@ class MAPPOTrainer:
         ax.legend(fontsize=13)
         plt.tight_layout()
 
-        # Save resulting plot
+        # Save resulting plot.
         filename = f'scores_{self.i_episode}'
         fig.savefig(os.path.join(self.save_dir, filename))
         plt.show()
