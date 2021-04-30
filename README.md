@@ -1,8 +1,8 @@
 # Competitive Reinforcement Learning through Multi-Agent Proximal Policy Optimization
 
-The chance to evaluate one's capabilities in the pursuit of achievement through competition is a beautiful thing.  Who doesn't relish the possibility of taking on a few friends in a fair game from time to time?  I myself particularly enjoy the challenge of a 1 on 1 basketball game, taking a stroll down memory lane by attempting to beat an old Nintendo 64 game or even having a board game night with good company.  The process of continually improving performance over time is enjoyable.  And it is achieved via the process of repitition, evaluation, and using subsequent insights to implement changes in approach.
+The chance to evaluate one's capabilities in the pursuit of achievement through competition is a beautiful thing.  Who doesn't relish the opportunity to take on a few friends in a fair game from time to time?  I myself particularly enjoy the challenge of a 1 on 1 basketball game, taking a stroll down memory lane by attempting to beat an old Nintendo 64 game or even having a board game night with good company.  The process of continually improving performance over time is enjoyable.  And it is achieved via the process of repitition, evaluation, and using subsequent insights to implement changes in approach.
 
-Well, what if this could be implemented through Artificial Intelligence?  Could consistent play, evaluation, and policy optimization be used in order to train an agent to become otherworldy in a specific competitive domain?  This repository contains an implementation of an AI algorithm used in this exact pursuit.
+Well, what if this process could be implemented through Artificial Intelligence?  Could experience, evaluation, and policy optimization be used in order to train an agent to become otherworldy in a specific competitive domain?  This repository contains an implementation of an AI algorithm used in this exact pursuit.
 
 ## Details
 
