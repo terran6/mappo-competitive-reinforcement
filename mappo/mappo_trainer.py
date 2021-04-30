@@ -172,9 +172,9 @@ class MAPPOTrainer:
 
         # Print current status to terminal.
         print(
-            f'\033[1mEpisode {self.i_episode} - ' +
-            f'Mean Max Reward: {max_mean:.2f}\033[0m' +
-            f'\n\t{agent_info}\n\t' +
+            f'\033[1mEpisode {self.i_episode} - '
+            f'Mean Max Reward: {max_mean:.2f}\033[0m'
+            f'\n\t{agent_info}\n\t'
             f'Mean Total Reward: {mean_reward.sum():.2f}, '
             f'Mean Episode Length {mean_eps_len:.1f}'
         )
